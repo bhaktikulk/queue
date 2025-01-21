@@ -152,6 +152,7 @@ function Signup() {
   const [image, setImage] = useState(null); // State to store image
   const [error, setError] = useState("");
   const navigate = useNavigate();
+axios.defaults.withCredentials=true;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -184,7 +185,7 @@ function Signup() {
 
     // Send data to the backend
     axios
-      .post("http://localhost:3001/", formData, {
+      .post("https://queue-three.vercel.app/", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
