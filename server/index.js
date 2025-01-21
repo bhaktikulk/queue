@@ -140,6 +140,9 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 
+app.get("/",(res,req)=>{
+  res.json("Hello");
+})
 // Schema and Model
 const EmployeeSchema = new mongoose.Schema({
   name: String,
